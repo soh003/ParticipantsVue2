@@ -60,6 +60,16 @@ const app = Vue.createApp({
                 }
             );
         },
+        sortByAge(order) {
+            if (order === 'asc') {
+                // Sorter stigende (lav til høj)
+                this.participants.sort((a, b) => a.age - b.age);
+            } else if (order === 'desc') {
+                // Sorter faldende (høj til lav)
+                this.participants.sort((a, b) => b.age - a.age);
+            }
+        },
+        
                 
     },
     computed:{

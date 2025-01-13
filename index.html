@@ -33,7 +33,12 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Age</th>
+                    <th>
+                        Age
+                        <!--sortering her-->
+                        <button v-on:click="sortByAge('asc')">Sort by Age (Ascending)</button>
+                        <button v-on:click="sortByAge('desc')">Sort by Age (Descending)</button>                        
+                    </th>
                     <th>Country</th>
                     <th>Action</th>
                 </tr>
