@@ -46,8 +46,21 @@ const app = Vue.createApp({
                 error=>{
                     console.log(error)
                 }
-              )
-            }
+            )
+        },
+        deleteMethod(participantId) {
+            axios.delete(`http://localhost:5071/api/Participants/${participantId}`)
+                .then(() => {
+                    // Fjern deltageren lokalt fra listen
+                    this.participants = this.participants.filter(p => p.id !== participantId);
+                    
+                })
+                .catch(error => {
+                    console.error('Error deleting participant:', error);
+                }
+            );
+        },
+                
     },
     computed:{
         myComputed(){
