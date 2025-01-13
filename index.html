@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Import styles-->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Vue Template</title>
+    <!--import Vue.js-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app"> 
+        <div class="nav-bar"></div>
+    
+        <h1>{{intro}}</h1>
+
+        <div>Navn: <input v-model="navn"></div>
+        <div>Efternavn: <input v-model="efternavn"></div>
+        <div>Kunde-Id: <input v-model="id"></div>
+
+        <button v-on:click="addMethod">Tilføj kunde</button>
+
+        <ul>
+            <li v-for="k in kundeListe">
+                {{k.navn}}
+                {{k.efternavn}}
+                {{k.id}}
+
+            </li>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Efternavn</th>
+                    <th>Kunde-Id</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tbody>
+                    <tr v-for="k in kundeListe">
+                        <td>{{k.navn}}</td>
+                        <td>{{k.efternavn}}</td>
+                        <td>{{k.id}}</td>
+                    </tr>
+                </tbody>
+            </tbody>
+        </table>
+
+
+    </div>
+    
+<!--Import App-->
+<script src="./js/main.js"></script>
+
+<!--Mount App-->
+    <script>
+    const mountedApp = app.mount('#app')
+    </script>
+    
+</body>
+</html>
